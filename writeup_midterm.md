@@ -38,6 +38,12 @@ Overall, the car body is well represented while windows are not directly visible
 
 ## 2. Create Bird's-Eye View from Lidar PCL
 ### 2.1 Convert Sensor Coordinates to BEV-Map Coordinates (ID_S2_EX1)
+
+The first part of the function 'bev_from_pcl' has been implemented in [objdet_pcl.py](student/objdet_pcl.py).  The resulting BEV-map is shown hereafter:
+
+<img src="img/ID_S2_EX1_BEV-Map.png" width="800"/>
+
+
 ### 2.2 Compute Intensity Layer of BEV-Map (ID_S2_EX2)
 ### 2.3 Compute Height Layer of BEV-Map (ID_S2_EX3)
 
