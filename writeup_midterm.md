@@ -53,6 +53,11 @@ The second part of the function 'bev_from_pcl' has been implemented in [objdet_p
 
 ### 2.3 Compute Height Layer of BEV-Map (ID_S2_EX3)
 
+The third part of the function 'bev_from_pcl' has been implemented in [objdet_pcl.py](student/objdet_pcl.py).  A cutout of the resulting height layer of the BEV-map is shown below:
+
+<img src="img/ID_S2_EX3_Height-Layer.png" width="800"/>
+
+
 ## 3. Model-based Object Detection in BEV Image
 ### 3.1 Add a Second Model from a GitHub Repo (ID_S3_EX1)
 ### 3.2 Extract 3D Bounding Boxes from Model Response (ID_S3_EX2)
