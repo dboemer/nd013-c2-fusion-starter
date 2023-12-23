@@ -45,6 +45,12 @@ The first part of the function 'bev_from_pcl' has been implemented in [objdet_pc
 
 
 ### 2.2 Compute Intensity Layer of BEV-Map (ID_S2_EX2)
+
+The second part of the function 'bev_from_pcl' has been implemented in [objdet_pcl.py](student/objdet_pcl.py).  A cutout of the resulting intensity layer of the BEV-map is shown below:
+
+<img src="img/ID_S2_EX2_Intensity-Layer.png" width="800"/>
+
+
 ### 2.3 Compute Height Layer of BEV-Map (ID_S2_EX3)
 
 ## 3. Model-based Object Detection in BEV Image
