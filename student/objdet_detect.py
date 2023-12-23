@@ -63,14 +63,16 @@ def load_configs_model(model_name='darknet', configs=None):
         #######
         print("student task ID_S3_EX1-3")
         
-        configs.saved_fn = 'fpn_resnet'
-        configs.arch = 'fpn_resnet'
-        configs.num_layers = 18
         configs.model_path = os.path.join(parent_path, 'tools', 'objdet_models', 'resnet')
         configs.pretrained_path = os.path.join(configs.model_path, 'pretrained', 'fpn_resnet_18_epoch_300.pth')
+        configs.arch = 'fpn_resnet'
+        configs.num_layers = 18
+        
+        # From parser
+        configs.saved_fn = 'fpn_resnet'
         configs.K = 50
         configs.conf_thresh = 0.5
-        configs.no_cuda = False
+        configs.no_cuda = True
         configs.gpu_idx = 0
         configs.num_samples = None
         configs.num_workers = 1
@@ -241,19 +243,19 @@ def detect_objects(input_bev_maps, model, configs):
 
         ## step 2 : loop over all detections
         for det in detections:
-            id, x, y, z, h, w, l, yaw = det
+            id, bev_x, bev_y, z, h, bev_w, bev_l, yaw = det
         
             ## step 3 : perform the conversion using the limits for x, y and z set in the configs structure
-            x = y / configs.bev_height * (configs.lim_x[1] - configs.lim_x[0])
-            y = x / configs.bev_width * (configs.lim_y[1] - configs.lim_y[0]) - (configs.lim_y[1] - configs.lim_y[0]) / 2.0 
-            w = w / configs.bev_width * (configs.lim_y[1] - configs.lim_y[0]) 
-            l = l / configs.bev_height * (configs.lim_x[1] - configs.lim_x[0])
+            x = bev_y / configs.bev_height * (configs.lim_x[1] - configs.lim_x[0])
+            y = bev_x / configs.bev_width * (configs.lim_y[1] - configs.lim_y[0]) - (configs.lim_y[1] - configs.lim_y[0])/2.0 
+            w = bev_w / configs.bev_width * (configs.lim_y[1] - configs.lim_y[0]) 
+            l = bev_l / configs.bev_height * (configs.lim_x[1] - configs.lim_x[0])
         
             ## step 4 : append the current object to the 'objects' array
             objects.append([1, x, y, z, h, w, l, yaw])
         
     #######
-    ####### ID_S3_EX2 START #######   
+    ####### ID_S3_EX2 START #######
     
     return objects    
 

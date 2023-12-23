@@ -46,14 +46,14 @@ The first part of the function 'bev_from_pcl' has been implemented in [objdet_pc
 
 ### 2.2 Compute Intensity Layer of BEV-Map (ID_S2_EX2)
 
-The second part of the function 'bev_from_pcl' has been implemented in [objdet_pcl.py](student/objdet_pcl.py).  A cutout of the resulting intensity layer of the BEV-map is shown below:
+The second part of the function 'bev_from_pcl' has been implemented in [objdet_pcl.py](student/objdet_pcl.py).  The resulting intensity layer of the BEV-map is shown below:
 
 <img src="img/ID_S2_EX2_Intensity-Layer.png" width="800"/>
 
 
 ### 2.3 Compute Height Layer of BEV-Map (ID_S2_EX3)
 
-The third part of the function 'bev_from_pcl' has been implemented in [objdet_pcl.py](student/objdet_pcl.py).  A cutout of the resulting height layer of the BEV-map is shown below:
+The third part of the function 'bev_from_pcl' has been implemented in [objdet_pcl.py](student/objdet_pcl.py).  The resulting height layer of the BEV-map is shown below:
 
 <img src="img/ID_S2_EX3_Height-Layer.png" width="800"/>
 
@@ -63,11 +63,18 @@ The third part of the function 'bev_from_pcl' has been implemented in [objdet_pc
 
 1. The configuration parameters from [SFA3D](https://github.com/maudzung/SFA3D/tree/master) were added to the function 'load_configs_model' in [objdet_detect.py](student/objdet_detect.py).
 2. The model instantiation was added to the function 'create_model' in [objdet_detect.py](student/objdet_detect.py).
-3. The model output decoding was added to the function 'detect_objects' in [objdet_detect.py](student/objdet_detect.py).
-4. The extraction of boundary boxes was added to the function 'detect_objects' in [objdet_detect.py](student/objdet_detect.py).
 
 
 ### 3.2 Extract 3D Bounding Boxes from Model Response (ID_S3_EX2)
+
+1. The model output decoding was added to the function 'detect_objects' in [objdet_detect.py](student/objdet_detect.py).
+2. The extraction of boundary boxes was added to the function 'detect_objects' in [objdet_detect.py](student/objdet_detect.py).
+
+The following figures show the ground truth at the top and the prediction based on lidar at the bottom for frames 50 and 51.  One should notice that lidar data only becomes sufficient in frame 51 to detect the 3rd car:
+
+<img src="img/ID_S3_EX2_Frame50.png" width="400"/>
+<img src="img/ID_S3_EX2_Frame51.png" width="400"/>
+
 
 ## 4. Performance Evaluation for Object Detection
 ### 4.1 Compute Intersection-over-Union (IOU) between labels and detections (ID_S4_EX1)
