@@ -7,15 +7,36 @@ This is the mid-term project of the section "Sensor Fusion and Tracking" in [Uda
 
 Function 'show_range_image' has been implemented in [objdet_pcl.py](student/objdet_pcl.py).  The cropped range and intensity image is shown below:
 
-<img src="img/ID_S1_EX1_Cropped-Range-Intensity.png" alt="Image0" width="800"/>
+<img src="img/ID_S1_EX1_Cropped-Range-Intensity.png" width="800"/>
 
 
 ### 1.2. Visualize Point-Cloud (ID_S1_EX2)
 
-Function 'show_pcl' has been implemented in [objdet_pcl.py](student/objdet_pcl.py).  
+Function 'show_pcl' has been implemented in [objdet_pcl.py](student/objdet_pcl.py).  The bird's-eye view of the point cloud shows at least 10 examples of vehicles with varying degree of visibility:
+
+<img src="img/ID_S1_EX2_Vehicles-In-PCL.png" width="800"/>
+
+A few vehicles features, which appear stable in most of the inspected examples, can be identified:
+
+1. Tires
+<img src="img/ID_S1_EX2_Tires.png" width="800"/>
+
+2. Side mirrors
+<img src="img/ID_S1_EX2_Side-Mirrors.png" width="800"/>
+
+3. Rear bumpers
+<img src="img/ID_S1_EX2_Rear-Bumpers.png" width="800"/>
+
+4. Wind shields (by the rest of the body)
+<img src="img/ID_S1_EX2_Wind-Shields.png" width="800"/>
+
+5. Side windows (by the rest of the body)
+<img src="img/ID_S1_EX2_Side-Windows.png" width="800"/>
+
+Overall, the car body is well represented while windows are not directly visible (only by the rest of the body).  This is consistent with the lidar intensity channel (see e.g. section 1.1), i.e., the body corresponds to a high intensity, while windows have a very low intensity.
 
 
-## 2. Create Birds-Eye View from Lidar PCL
+## 2. Create Bird's-Eye View from Lidar PCL
 ### 2.1 Convert Sensor Coordinates to BEV-Map Coordinates (ID_S2_EX1)
 ### 2.2 Compute Intensity Layer of BEV-Map (ID_S2_EX2)
 ### 2.3 Compute Height Layer of BEV-Map (ID_S2_EX3)
