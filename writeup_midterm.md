@@ -4,7 +4,16 @@ This is the mid-term project of the section "Sensor Fusion and Tracking" in [Uda
 
 ## 1. Compute Lidar Point-Cloud from Range Image
 ### 1.1. Visualize Range Image Channels (ID_S1_EX1)
+
+Function 'show_range_image' has been implemented in [objdet_pcl.py](student/objdet_pcl.py).  The cropped range and intensity image is shown below:
+
+<img src="img/ID_S1_EX1_Cropped-Range-Intensity.png" alt="Image0" width="800"/>
+
+
 ### 1.2. Visualize Point-Cloud (ID_S1_EX2)
+
+Function 'show_pcl' has been implemented in [objdet_pcl.py](student/objdet_pcl.py).  
+
 
 ## 2. Create Birds-Eye View from Lidar PCL
 ### 2.1 Convert Sensor Coordinates to BEV-Map Coordinates (ID_S2_EX1)
