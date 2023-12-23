@@ -60,6 +60,13 @@ The third part of the function 'bev_from_pcl' has been implemented in [objdet_pc
 
 ## 3. Model-based Object Detection in BEV Image
 ### 3.1 Add a Second Model from a GitHub Repo (ID_S3_EX1)
+
+1. The configuration parameters from [SFA3D](https://github.com/maudzung/SFA3D/tree/master) were added to the function 'load_configs_model' in [objdet_detect.py](student/objdet_detect.py).
+2. The model instantiation was added to the function 'create_model' in [objdet_detect.py](student/objdet_detect.py).
+3. The model output decoding was added to the function 'detect_objects' in [objdet_detect.py](student/objdet_detect.py).
+4. The extraction of boundary boxes was added to the function 'detect_objects' in [objdet_detect.py](student/objdet_detect.py).
+
+
 ### 3.2 Extract 3D Bounding Boxes from Model Response (ID_S3_EX2)
 
 ## 4. Performance Evaluation for Object Detection
