@@ -72,11 +72,17 @@ The third part of the function 'bev_from_pcl' has been implemented in [objdet_pc
 
 The following figures show the ground truth at the top and the prediction based on lidar at the bottom for frames 50 and 51.  One should notice that lidar data only becomes sufficient in frame 51 to detect the 3rd car:
 
-<img src="img/ID_S3_EX2_Frame50.png" width="400"/>
-<img src="img/ID_S3_EX2_Frame51.png" width="400"/>
+<p float="left">
+  <img src="img/ID_S3_EX2_Frame50.png" width="400"/>
+  <img src="img/ID_S3_EX2_Frame51.png" width="400"/>
+</p>
 
 
 ## 4. Performance Evaluation for Object Detection
 ### 4.1 Compute Intersection-over-Union (IOU) between labels and detections (ID_S4_EX1)
+
+The first part of the function 'measure_detection_performance' has been implemented in [objdet_eval.py](student/objdet_eval.py).
+
+
 ### 4.2 Compute False-Negatives and False-Positives (ID_S4_EX2)
 ### 4.3 Compute Precision and Recall (ID_S4_EX3)

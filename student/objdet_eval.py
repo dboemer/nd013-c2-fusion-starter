@@ -49,16 +49,32 @@ def measure_detection_performance(detections, labels, labels_valid, min_iou=0.5)
             print("student task ID_S4_EX1 ")
 
             ## step 1 : extract the four corners of the current label bounding-box
+            det_label = label.box
             
             ## step 2 : loop over all detected objects
+            for det in detections:
 
                 ## step 3 : extract the four corners of the current detection
+                id, x, y, z, h, w, l, yaw = det
                 
                 ## step 4 : computer the center distance between label and detection bounding-box in x, y, and z
+                dist_x = np.array(det_label.center_x - x).item()
+                dist_y = np.array(det_label.center_y - y).item()
+                dist_z = np.array(det_label.center_z - z).item()
                 
                 ## step 5 : compute the intersection over union (IOU) between label and detection bounding-box
+                bb_label = tools.compute_box_corners(det_label.center_x, det_label.center_y, det_label.width, det_label.length, det_label.heading)
+                bb_det = tools.compute_box_corners(x, y, w, l, yaw)
                 
-                ## step 6 : if IOU exceeds min_iou threshold, store [iou,dist_x, dist_y, dist_z] in matches_lab_det and increase the TP count
+                poly_label = Polygon(bb_label)
+                poly_det = Polygon(bb_det)
+                intersection = poly_label.intersection(poly_det).area
+                union = poly_label.union(poly_det).area
+                iou = intersection / union
+                
+                ## step 6 : if IOU exceeds min_iou threshold, store [iou, dist_x, dist_y, dist_z] in matches_lab_det and increase the TP count
+                if iou > min_iou:
+                    matches_lab_det.append([iou, dist_x, dist_y, dist_z])
                 
             #######
             ####### ID_S4_EX1 END #######     
