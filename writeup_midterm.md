@@ -85,4 +85,16 @@ The first part of the function 'measure_detection_performance' has been implemen
 
 
 ### 4.2 Compute False-Negatives and False-Positives (ID_S4_EX2)
+
+The second part of the function 'measure_detection_performance' has been implemented in [objdet_eval.py](student/objdet_eval.py).
+
+
 ### 4.3 Compute Precision and Recall (ID_S4_EX3)
+
+The computation of precision and recall has been implemented in the function 'compute_performance_stats' in [objdet_eval.py](student/objdet_eval.py).  The results of precision = 0.95 and recall = 0.94 were obtained with the following distributions:
+
+<img src="img/ID_S4_EX3_Distributions.png" width="800"/>
+
+The position error in the horizontal plane is relatively small, i.e. below 10 cm.  Hence, LiDAR is a rather effective way for object detection.
+
+The application of the 'fpn_reset' method results in precision = 0.98 and recall = 0.88.  Hence 'fpn_resnet' has a higher probability of a detected car actually being a real car than 'darknet', but a lower probability for finding a real car.
